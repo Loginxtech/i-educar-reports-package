@@ -106,6 +106,7 @@
 	<field name="num_termo" class="java.math.BigDecimal"/>
 	<field name="num_livro" class="java.lang.String"/>
 	<field name="num_folha" class="java.math.BigDecimal"/>
+	<field name="cpf" class="java.lang.String"/>
 	<field name="certidao_nascimento" class="java.lang.String"/>
 	<field name="ano_1serie" class="java.lang.Integer"/>
 	<field name="ano_2serie" class="java.lang.Integer"/>
@@ -425,7 +426,7 @@
 					<textFieldExpression><![CDATA["R.G: "+($F{rg} != null ? $F{rg} : "")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="197" y="65" width="174" height="10">
+					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="278" y="65" width="135" height="10">
 						<printWhenExpression><![CDATA[($F{certidao_nascimento} == null || $F{certidao_nascimento}.equals(""))]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -476,7 +477,25 @@
 					<text><![CDATA[6º Ano]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="ad2aa8fc-5005-4c5e-9315-febfc54248dd" x="4" y="65" width="367" height="10">
+					<reportElement uuid="3f1c9a52-7d4e-4b8a-9c61-2e5a8b0d7f13" x="4" y="65" width="190" height="10">
+						<printWhenExpression><![CDATA[($F{certidao_nascimento} != null && !$F{certidao_nascimento}.trim().equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CIN: "+($F{cpf} != null ? $F{cpf} : "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="8b2e4d71-0c3a-4f95-a7d8-6e1f2c9b3a40" x="4" y="65" width="135" height="10">
+						<printWhenExpression><![CDATA[($F{certidao_nascimento} == null || $F{certidao_nascimento}.trim().equals(""))]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CIN: "+($F{cpf} != null ? $F{cpf} : "")]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="ad2aa8fc-5005-4c5e-9315-febfc54248dd" x="197" y="65" width="354" height="10">
 						<printWhenExpression><![CDATA[(!$F{certidao_nascimento}.trim().equals("") || !$F{certidao_nascimento} == null)]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -597,7 +616,7 @@
 					<text><![CDATA[3º Ano]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="4" y="65" width="190" height="10">
+					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="141" y="65" width="135" height="10">
 						<printWhenExpression><![CDATA[($F{certidao_nascimento} == null || $F{certidao_nascimento}.equals(""))]]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -712,7 +731,7 @@
 					<textFieldExpression><![CDATA[$F{max_ano_4serie}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="375" y="65" width="176" height="10">
+					<reportElement uuid="fb82b8e6-ad73-4cc7-999a-e5dce10ce0c5" x="415" y="65" width="136" height="10">
 						<printWhenExpression><![CDATA[($F{certidao_nascimento} == null || $F{certidao_nascimento}.equals(""))]]></printWhenExpression>
 					</reportElement>
 					<textElement>
