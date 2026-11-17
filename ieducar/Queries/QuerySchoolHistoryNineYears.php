@@ -20,6 +20,7 @@ class QuerySchoolHistoryNineYears extends QueryBridge
                    documento.num_termo AS num_termo,
                    documento.num_livro AS num_livro,
                    documento.num_folha AS num_folha,
+                   public.formata_cpf(fisica.cpf) AS cpf,
                    documento.certidao_nascimento AS certidao_nascimento,
                    view_historico_9anos.ano_1serie AS ano_1serie,
                    view_historico_9anos.ano_2serie AS ano_2serie,
